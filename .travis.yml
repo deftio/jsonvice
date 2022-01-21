@@ -1,0 +1,29 @@
+#travis-ci continuous integration test set up  
+language: python
+python:
+  - "3.6"
+  - "3.7" 
+  - "3.8"
+  - "3.9"
+  - "3.10"
+
+# command to install dependencies
+install: 
+  #- "pip install -U pytest"
+  #- "pip install 'coverage<4'"
+  - pip install -U pytest pytest-cov 
+  - pip install coveralls 
+  #- if [[ $TRAVIS_PYTHON_VERSION == 3.3 ]]; then pip install virtualenv==15.2.0; fi 
+  - pip install poetry
+  - poetry update
+  - poetry build
+
+# command to run tests
+script: 
+  - poetry run pytest
+  #- pytest
+  #- coverage run --source fifostr -m pytest 
+
+#code coverage
+after_success:
+  #- coveralls
