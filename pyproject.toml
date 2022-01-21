@@ -3,11 +3,25 @@ name = "jsonvice"
 version = "0.1.1"
 description = "Simply CLI for compacting on JSON files and reducing precicions of floating point values"
 authors = ["Manu Chatterjee <deftio@deftio.com>"]
+homepage = "https://github.com/deftio/jsonvice"
+repository = "https://github.com/deftio/jsonvice"
+keywords = ["json", "minify", "truncate floating point precision","json quanitize","quantize"]
+classifiers = [
+    "Environment :: Console",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: JSON",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+include = [
+    "LICENSE",
+]
 
 [tool.poetry.dependencies]
+# Updated Python version
 python = "^3.6"
 
 [tool.poetry.dev-dependencies]
+#python = "^3.6"
 pytest = "^5.2"
 coveralls = "^3.3.1"
 
@@ -17,3 +31,4 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
 jsonvice = "jsonvice.jsonvice:cli"
+
