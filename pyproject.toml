@@ -9,8 +9,9 @@ keywords = ["json", "minify", "truncate floating point precision","json quanitiz
 classifiers = [
     "Environment :: Console",
     "Operating System :: OS Independent",
-    "Topic :: Software Development :: JSON",
-    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: System :: Archiving :: Compression",
+    "Topic :: Software Development :: Libraries :: Python Modules"
 ]
 include = [
     "LICENSE",
