@@ -73,8 +73,10 @@ Example
 poetry run jsonvice -i inputfile.json -o outputfile.json -p 4
 ```
 
-# Installing as stand alone cli
-pipx (not pip3) can be used to install an isolated version of jsonvice as a command line tool.
+
+
+# Installing as stand alone commandline tool
+pipx can be used to install an isolated version of jsonvice as a command line tool.
 
 ```sh
 pipx install jsonvice
@@ -86,11 +88,21 @@ or install from github repo
 pipx install git+https://github.com/deftio/jsonvice
 ```
 
+Now you can use jsonvice at the commandline without typing python3 like this example:
+
+```
+jsonvice -i inputfile.json -o - -b
+```
+
 ## Python version support
 Python version 3.6 or higher is required to build
 
 # Testing
 poetry run pytest
+
+or
+
+tox
 
 # History & Motivation
 json vice started as a script to compactify / minify some large machine learning model files which had large floating point numbers.   By rounding to fixed number of sig digits and then testing the models against testsuites to see the effects of truncation.
