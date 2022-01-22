@@ -2,7 +2,7 @@
 name = "jsonvice"
 version = "0.1.2"
 description = "jsonvice minifies JSON files by trimming floating point precision."
-readme = "readme.md"
+readme = "README.md"
 authors = ["Manu Chatterjee <deftio@deftio.com>"]
 homepage = "https://github.com/deftio/jsonvice"
 repository = "https://github.com/deftio/jsonvice"
