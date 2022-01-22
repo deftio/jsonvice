@@ -1,5 +1,7 @@
 todo.md
 
+[![Coverage Status](https://coveralls.io/repos/github/deftio/jsonvice/badge.svg?branch=master)](https://coveralls.io/github/deftio/jsonvice?branch=master)
+
 
 Notes:
 python3 jsonvice.py.py < myjsonfiletominify > myoutputfile                                                             
