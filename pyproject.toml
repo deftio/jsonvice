@@ -20,9 +20,8 @@ include = [
 [tool.poetry.dependencies]
 # Updated Python version
 python = "^3.6"
-pytest = "^6.2.5"
 coveralls = "^3.3.1"
-pytest-cov = "^3.0.0"
+tox = "^3.24.5"
 
 [tool.poetry.dev-dependencies]
 #python = "^3.6"
