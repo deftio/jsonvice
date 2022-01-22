@@ -5,13 +5,13 @@
 
 # About jsonvice  
 
-jsonvice is small command line tool (cli) for minifying JSON but with optimal precision truncation/rounding.  In many applications floating point values in JSON can be very long (15 digits) but this level of accuracy isn't needed and takes up much space.
+jsonvice is command line tool for minifying JSON with optimal precision truncation/rounding.  In many applications floating point values in JSON can be very long (15 digits or more) but this level of accuracy isn't needed and takes up much space.
 
-jsonvice allows the truncation of all the embedded floating point numbers to a specified number of digits. 
+jsonvice allows the truncation of all the embedded floating point numbers (wherever they appear) to a specified number of digits. 
 
-It also removes unencessary white space to help minify JSON files. However there are many tools that can minify JSON.
+It also removes unnecessary white space to minify JSON files.
 
-input.json
+sample_input.json
 ```json
 {
     "x" :   12.32,
@@ -21,7 +21,7 @@ input.json
 }
 ```
 
-run jsonvice
+now run jsonvice
 ```sh
 jsonvice -i input.json -o output.json -p 4
 ```
@@ -36,7 +36,7 @@ ouput.json
 
 compactify json and reduce floating point precision to max of 5 digits by rounding
 ```shell
-jsonvice -i myfile.json -o output.json -p 5
+jsonvice -i sample_input.json -o output.json -p 5
 ```
 
 compactify json and reduce floating point precision to max of 5 digits by rounding down
@@ -76,7 +76,7 @@ poetry run jsonvice -i inputfile.json -o outputfile.json -p 4
 
 
 # Installing as stand alone commandline tool
-pipx can be used to install an isolated version of jsonvice as a command line tool.
+pipx can be used to install a stand alone version of jsonvice as a command line tool. (note pipx is like pip or pip3 but installs programs with their own virtual environment.)
 
 ```sh
 pipx install jsonvice
@@ -95,21 +95,25 @@ jsonvice -i inputfile.json -o - -b
 ```
 
 ## Python version support
-Python version 3.6 or higher is required to build
+Python version 3.6 or higher is required to build jsonvice.  If pipx is used for install isolation takes place automatically.
 
 # Testing
+Both pytest and tox were used to build jsonvice.  Testing can be performed at the command line via either tool:
+
+```sh
 poetry run pytest
-
+```
 or
-
+```sh
 tox
+```
 
 # History & Motivation
 json vice started as a script to compactify / minify some large machine learning model files which had large floating point numbers.   By rounding to fixed number of sig digits and then testing the models against testsuites to see the effects of truncation.
 
 At the time couldn't find a tool and whipped up small script (the original script is in /dev directory).
 
-So jsonvice was built to learn / test practices around the python poetry and pipx tools, for use in other projects, but starting with a small example cli program that already worked.
+So jsonvice was built to learn / test practices around the python poetry and pipx tools, for use in other projects, but starting with a small example cli program that already worked.  
 
 # License
 jsonvice uses the BSD-2 open source license
