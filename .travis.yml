@@ -20,7 +20,7 @@ install:
 
 # command to run tests
 script: 
-  - tox
+  - poetry run pytest
   #- pytest
   #- coverage run --source fifostr -m pytest  
 
