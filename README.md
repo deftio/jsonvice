@@ -1,5 +1,5 @@
 [![PyPI version](https://badge.fury.io/py/jsonvice.svg)](https://badge.fury.io/py/jsonvice)
-[![Build Status](https://travis-ci.com/deftio/jsonvice.svg?branch=master)](https://travis-ci.com/deftio/jsonvice)
+[![Build Status](https://api.travis-ci.com/deftio/jsonvice.svg?branch=master)](https://app.travis-ci.com/deftio/jsonvice)
 [![License](https://img.shields.io/badge/License-BSD%202--Clause-blue.svg)](https://opensource.org/licenses/BSD-2-Clause)
 
 
