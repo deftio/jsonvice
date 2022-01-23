@@ -1,11 +1,13 @@
 #travis-ci continuous integration test set up  
 language: python
 python:
+  - "3.5"
   - "3.6"
   - "3.7" 
   - "3.8"
   - "3.9"
-
+  - "3.10"
+  
 # command to install dependencies
 before-install:
   - pip install poetry
@@ -21,8 +23,7 @@ install:
 script: 
   - tox
   #- pytest
-  #- coverage run --source fifostr -m pytest  
-
+  
 #code coverage
 after_success:
   #- coveralls

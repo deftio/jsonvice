@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "jsonvice"
-version = "0.1.2"
+version = "1.0.1"
 description = "jsonvice minifies JSON files by trimming floating point precision."
 readme = "README.md"
 authors = ["Manu Chatterjee <deftio@deftio.com>"]
@@ -20,7 +20,7 @@ include = [
 
 [tool.poetry.dependencies]
 # Updated Python version
-python = "^3.6"
+python = "^3.5"
 coveralls = "^3.3.1"
 tox = "^3.24.5"
 
@@ -35,3 +35,5 @@ build-backend = "poetry.core.masonry.api"
 [tool.poetry.scripts]
 jsonvice = "jsonvice.jsonvice:cli"
 
+[tool.poetry-exec-plugin.commands] 
+coverage = "poetry run pytest  --cov-report term --cov=jsonvice -vv"

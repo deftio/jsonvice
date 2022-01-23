@@ -1,11 +1,19 @@
+import os,toml
 from jsonvice import __version__
 
 from jsonvice.jsonvice import *
 
 
 def test_version():
-    assert __version__ == "0.1.1"
+    accepted_version = "1.0.1"  # this is what the release is intended to be.  
+                                # every time a new release is made this needs to be updated.
 
+    #now the next too lines make sure that the version string is set in both
+    #pyproject.toml and /src/.../__init__.py are the same
+    assert __version__ == accepted_version
+    __location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
+
+    assert toml.load(__location__+"/../pyproject.toml")["tool"]["poetry"]["version"] == accepted_version 
 
 def test_quant():
     # test rounding
@@ -34,6 +42,22 @@ def test_process_data():
     r = process_data(x)
     assert '{"a":123.456,"1":"this is it "}' == r
 
+    # test rounding
     x = '{"a":123.456,\n "1":"this is it "  }'
     r = process_data(x, 2)  # uses rounding
     assert '{"a":123.46,"1":"this is it "}' == r
+
+    # test floor
+    x = '{"a":123.456,\n "1":"this is it "  }'
+    r = process_data(x, 2, "floor")  # uses rounding
+    assert '{"a":123.45,"1":"this is it "}' == r
+
+    # test ceil
+    x = '{"a":123.456,\n "1":"this is it "  }'
+    r = process_data(x, 2, "ceil")  # uses rounding
+    assert '{"a":123.46,"1":"this is it "}' == r
+
+    # test beautify
+    x = '{"a":123.456,\n "1":"this is it "  }'
+    r = process_data(x, 2, "ceil", True)  # uses rounding
+    assert '{\n    "1": "this is it ",\n    "a": 123.46\n}\n' == r

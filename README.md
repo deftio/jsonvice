@@ -76,7 +76,13 @@ poetry run jsonvice -i inputfile.json -o outputfile.json -p 4
 
 
 # Installing as stand alone commandline tool
-pipx can be used to install a stand alone version of jsonvice as a command line tool. (note pipx is like pip or pip3 but installs programs with their own virtual environment.)
+pip can be used into install jsonvice as stand alone tool (note python 3.6 should or later specified)
+```sh
+pip install jsonvice
+```
+
+### pipx install
+pipx can be used to install a stand alone version of jsonvice as a command line tool. Note pipx is like pip or pip3 but installs programs with their own virtual environment.
 
 ```sh
 pipx install jsonvice
