@@ -20,7 +20,7 @@ include = [
 
 [tool.poetry.dependencies]
 # Updated Python version
-python = "^3.5"
+python = "^3.6"
 coveralls = "^3.3.1"
 tox = "^3.24.5"
 
