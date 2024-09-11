@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "jsonvice"
-version = "1.0.1"
+version = "1.0.2"
 description = "jsonvice minifies JSON files by trimming floating point precision."
 readme = "README.md"
 authors = ["Manu Chatterjee <deftio@deftio.com>"]
@@ -19,14 +19,16 @@ include = [
 ]
 
 [tool.poetry.dependencies]
-# Updated Python version
-python = "^3.6"
+python = "^3.8"  # Python 3.6 is deprecated, so we're using 3.8+
+tox = "^4.18.0"  # Updated to the latest stable version of tox
+pytest = "^8.0.0"  # Ensure compatibility with newer pytest
 coveralls = "^3.3.1"
-tox = "^3.24.5"
+toml = "^0.10.2"
 
 [tool.poetry.dev-dependencies]
-#python = "^3.6"
-coveralls = "^3.3.1"
+# Only dev dependencies, you don't need coveralls twice.
+pytest = "^8.0.0"
+tox = "^4.18.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
@@ -36,4 +38,4 @@ build-backend = "poetry.core.masonry.api"
 jsonvice = "jsonvice.jsonvice:cli"
 
 [tool.poetry-exec-plugin.commands] 
-coverage = "poetry run pytest  --cov-report term --cov=jsonvice -vv"
+coverage = "poetry run pytest --cov-report term --cov=jsonvice -vv"

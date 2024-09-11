@@ -1,11 +1,10 @@
 import os,toml
 from jsonvice import __version__
-
 from jsonvice.jsonvice import *
 
 
 def test_version():
-    accepted_version = "1.0.1"  # this is what the release is intended to be.  
+    accepted_version = "1.0.2"  # this is what the release is intended to be.  
                                 # every time a new release is made this needs to be updated.
 
     #now the next too lines make sure that the version string is set in both
